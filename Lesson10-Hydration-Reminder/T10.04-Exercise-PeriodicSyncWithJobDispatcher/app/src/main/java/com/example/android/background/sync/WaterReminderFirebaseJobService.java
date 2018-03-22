@@ -22,7 +22,7 @@ import com.firebase.jobdispatcher.JobService;
 
 public class WaterReminderFirebaseJobService extends JobService {
 
-    AsyncTask mBackgroundTask;
+    private AsyncTask mBackgroundTask;
 
 
     @Override
