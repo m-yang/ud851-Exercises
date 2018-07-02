@@ -32,6 +32,7 @@ import com.example.android.todolist.database.TaskEntry;
 import java.util.List;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static com.example.android.todolist.AddTaskActivity.EXTRA_TASK_ID;
 
 
 public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemClickListener {
@@ -140,7 +141,8 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
 
     @Override
     public void onItemClickListener(int itemId) {
-        // Launch AddTaskActivity adding the itemId as an extra in the intent
-        // TODO (2) Launch AddTaskActivity with itemId as extra for the key AddTaskActivity.EXTRA_TASK_ID
+        Intent addTaskIntent = new Intent(this, AddTaskActivity.class);
+        addTaskIntent.putExtra(EXTRA_TASK_ID, itemId);
+        startActivity(addTaskIntent);
     }
 }
